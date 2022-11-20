@@ -19,7 +19,9 @@ public class ProductManager {
         Product[] result = new Product[0];
         for (Product product: repo.findAll()) {
             if (matches(product, text)) {
-                result[result.length - 1] = product;
+                Product[] tmp = new Product[result.length + 1];
+                tmp[result.length] = product;
+                result = tmp;
             }
         }
         return result;

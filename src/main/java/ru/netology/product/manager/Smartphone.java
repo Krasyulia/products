@@ -1,3 +1,7 @@
+package ru.netology.product.manager;
+
+import ru.netology.product.manager.Product;
+
 public class Smartphone extends Product {
     private String producer;
 

@@ -1,6 +1,13 @@
+package ru.netology.product.tests;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.netology.product.manager.Book;
+import ru.netology.product.manager.Product;
+import ru.netology.product.manager.ProductManager;
+import ru.netology.product.manager.Smartphone;
+import ru.netology.product.repo.ProductRepository;
 
 public class ProductRepositoryTest {
 

@@ -1,5 +1,6 @@
 package ru.netology.product.manager;
 
+import java.util.*;
 import ru.netology.product.repo.ProductRepository;
 
 public class ProductManager {
@@ -20,14 +21,19 @@ public class ProductManager {
     }
 
     public Product[] searchBy(String text) {
-        Product[] result = new Product[0];
+        List<Product> _result = new ArrayList<Product>();
         for (Product product: repo.findAll()) {
             if (matches(product, text)) {
-                Product[] tmp = new Product[result.length + 1];
-                tmp[result.length] = product;
-                result = tmp;
+                _result.add(product);
             }
         }
+
+        Product[] result = new Product[_result.size()];
+
+        for (int i = 0; i < _result.size(); i++) {
+            result[i] = _result.get(i);
+        }
+
         return result;
     }
 
